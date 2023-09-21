@@ -11,7 +11,7 @@ function Galerie() {
 
     useEffect(() => {
         const fetchTopVid = async () => {
-        const response = await fetch("http://localhost:3000/api/topVid");
+        const response = await fetch("https://mern-topvid.onrender.com/api/topVid");
         const json = await response.json();
         
         if(response.ok){

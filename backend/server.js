@@ -1,6 +1,7 @@
 var express = require('express');
 const mongoose = require('mongoose');
 const topVidRoutes = require('./routes/topVid');
+const cors = require('cors');
 require('dotenv').config();
 
 
@@ -8,6 +9,12 @@ var app = express();
 const PORT = 4000;
 
 
+const corsOptions = {
+    origin: 'https://courageous-moonbeam-7b73c5.netlify.app', // Mettez votre URL frontend Netlify ici
+    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use((req, res, next) =>{

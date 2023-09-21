@@ -19,7 +19,7 @@ const useFetch = () => {
         console.log(url);
         
         console.log(vid);
-        const request = await fetch('/api/topVid',{
+        const request = await fetch('https://mern-topvid.onrender.com/api/topVid',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(vid)
